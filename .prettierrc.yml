@@ -1,14 +1,3 @@
-# prettier-demo
-
-## Install
-```bash
-npm i -D prettier
-# or
-yarn add -D prettier
-```
-
-## Configure
-```yaml
 tabs: 2 # 缩进的空格数量
 useTabs: false # 使用tab缩进
 semi: false # 分号结尾
@@ -23,4 +12,3 @@ htmlWhitespaceSensitivity: css # html的空格检测
 vueIndentScriptAndStyle: true # script和style标签里的内容缩进
 endOfLine: crlf # 文本文件结束的换行符风格, (like unix)lf:\n (ms)crlf:\r\n
 embeddedLanguageFormatting: auto # 尝试检测语言并启用格式化
-```
