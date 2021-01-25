@@ -1,6 +1,7 @@
 # prettier-demo
 
 ## Install
+
 ```bash
 npm i -D prettier
 # or
@@ -8,6 +9,7 @@ yarn add -D prettier
 ```
 
 ## Configure
+
 ```yaml
 tabs: 2 # 缩进的空格数量
 useTabs: false # 使用tab缩进
@@ -23,4 +25,21 @@ htmlWhitespaceSensitivity: css # html的空格检测
 vueIndentScriptAndStyle: true # script和style标签里的内容缩进
 endOfLine: crlf # 文本文件结束的换行符风格, (like unix)lf:\n (ms)crlf:\r\n
 embeddedLanguageFormatting: auto # 尝试检测语言并启用格式化
+```
+
+## VSCode Integration
+
+需要安装扩展程序 [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+
+```bash
+mkdir .vscode && touch .vscode/settings.json
+```
+
+配置 vscode 工作区的默认格式化工具以及保存立即格式化
+
+```JSON
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+}
 ```
