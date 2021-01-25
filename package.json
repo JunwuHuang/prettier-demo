@@ -5,7 +5,11 @@
   "repository": "git@github.com:JunwuHuang/prettier-demo.git",
   "author": "JunwuHuang <978162622@qq.com>",
   "license": "MIT",
+  "scripts": {
+    "postinstall": "husky install"
+  },
   "devDependencies": {
+    "husky": "^5.0.6",
     "prettier": "^2.2.1"
   }
 }

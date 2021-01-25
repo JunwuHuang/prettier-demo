@@ -43,3 +43,44 @@ mkdir .vscode && touch .vscode/settings.json
     "editor.formatOnSave": true
 }
 ```
+
+## Husky Integration
+
+## install husky v5
+
+```bash
+npm i -D husky@next
+# or
+yarn add -D husky@next
+```
+
+## initialize husky
+
+package.json
+
+```JSON
+{
+  // ...
+  "scripts": {
+    "postinstall": "husky install"
+  },
+  // ...
+}
+
+```
+
+npx husky install
+
+```bash
+npm run postinstall
+# or
+yarn postinstall
+```
+
+## add pre-commit hook
+
+```bash
+npx husky add .husky/pre-commit "npx prettier --write ."
+# or
+yarn husky add .husky/pre-commit "yarn prettier --write ."
+```
