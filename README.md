@@ -11,7 +11,7 @@ yarn add -D prettier
 ## Configure
 
 ```yaml
-tabs: 2 # 缩进的空格数量
+tabWidth: 2 # 缩进的空格数量
 useTabs: false # 使用tab缩进
 semi: false # 分号结尾
 singleQuote: true # 单引号
