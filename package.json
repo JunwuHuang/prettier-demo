@@ -1,0 +1,8 @@
+{
+  "name": "prettier-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:JunwuHuang/prettier-demo.git",
+  "author": "JunwuHuang <978162622@qq.com>",
+  "license": "MIT"
+}
