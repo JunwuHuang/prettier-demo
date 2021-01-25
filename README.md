@@ -10,7 +10,10 @@ yarn add -D prettier
 
 ## Configure
 
+.prettierrc.yml
+
 ```yaml
+# .prettierrc.yml
 tabWidth: 2 # 缩进的空格数量
 useTabs: false # 使用tab缩进
 semi: false # 分号结尾
@@ -25,6 +28,23 @@ htmlWhitespaceSensitivity: css # html的空格检测
 vueIndentScriptAndStyle: true # script和style标签里的内容缩进
 endOfLine: crlf # 文本文件结束的换行符风格, (like unix)lf:\n (ms)crlf:\r\n
 embeddedLanguageFormatting: auto # 尝试检测语言并启用格式化
+```
+
+.prettierignore
+
+```conf
+# npm
+package-lock.json
+
+# yarn
+yarn.lock
+
+# husky
+.husky
+
+# ignore files
+*ignore
+
 ```
 
 ## VSCode Integration
@@ -83,4 +103,38 @@ yarn postinstall
 npx husky add .husky/pre-commit "npx prettier --write ."
 # or
 yarn husky add .husky/pre-commit "yarn prettier --write ."
+```
+
+# Lint-Staged Integration
+
+安装 lint-staged
+
+```bash
+npm i -D lint-staged
+# or
+yarn add -D lint-staged
+```
+
+创建 lint-staged 配置文件
+
+```bash
+touch .lintstagedrc.yml
+```
+
+所有文件都使用 prettier 格式化
+
+```yaml
+# .lintstagedrc.yml
+'*': 'prettier --write'
+```
+
+挂载 pre-commit 钩子
+
+```bash
+# .husky/pre-commit
+
+#!/bin/sh
+. "$(dirname $0)/_/husky.sh"
+
+yarn lint-staged
 ```

@@ -1,0 +1,11 @@
+# npm
+package-lock.json
+
+# yarn
+yarn.lock
+
+# husky
+.husky
+
+# ignore files
+*ignore
