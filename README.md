@@ -2,6 +2,8 @@
 
 ## Install
 
+### install [prettier](https://prettier.io/docs/en/index.html)
+
 ```bash
 npm i -D prettier
 # or
@@ -9,6 +11,8 @@ yarn add -D prettier
 ```
 
 ## Configure
+
+### [configure prettierrc](https://prettier.io/docs/en/configuration.html)
 
 .prettierrc.yml
 
@@ -30,7 +34,7 @@ endOfLine: crlf # 文本文件结束的换行符风格, (like unix)lf:\n (ms)crl
 embeddedLanguageFormatting: auto # 尝试检测语言并启用格式化
 ```
 
-.prettierignore
+[.prettierignore](https://prettier.io/docs/en/ignore.html)
 
 ```conf
 # npm
@@ -66,6 +70,9 @@ mkdir .vscode && touch .vscode/settings.json
 
 ## Husky Integration
 
+what is githooks ?[githooks - Hooks used by Git](https://git-scm.com/docs/githooks)  
+[what is husky?](https://github.com/typicode/husky#readme)
+
 ## install husky v5
 
 ```bash
@@ -97,12 +104,47 @@ npm run postinstall
 yarn postinstall
 ```
 
+tips: If the command runs successfully, you should see the following:  
+husky - installing git hooks...
+husky - done
+
+and then the .husky folder is created in root as follow:
+
++.husky  
++&emsp;.gitignore
+
 ## add pre-commit hook
 
 ```bash
 npx husky add .husky/pre-commit "npx prettier --write ."
 # or
 yarn husky add .husky/pre-commit "yarn prettier --write ."
+```
+
+if you are using window OS:
+
+```bash
+npx husky add .husky/pre-commit
+```
+
+and then you will see as follow:  
+.husky  
+&emsp;+.pre-commit
+
+open the .pre-commit file and modify:
+
+```
+#!/bin/sh
+. "$(dirname $0)/_/husky.sh"
+
+npx prettier --write .
+```
+
+Try to make a commit:
+
+```bash
+git add .
+git commit -m "Keep calm and commit"
 ```
 
 # Lint-Staged Integration
